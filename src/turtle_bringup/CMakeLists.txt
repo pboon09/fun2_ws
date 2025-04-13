@@ -29,6 +29,10 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/dummy_script.py
   scripts/crazy_pizza.py
+  scripts/controller.py
+  scripts/crazy_turtle.py
+  scripts/odom_publisher.py
+  scripts/goto_pos.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
