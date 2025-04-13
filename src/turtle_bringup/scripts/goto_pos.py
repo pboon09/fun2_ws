@@ -22,11 +22,14 @@ class GotoPos(Node):
         self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
         self.tf_broardcaster = TransformBroadcaster(self)
         self.cmd_vel_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/turtle2/cmd_vel', 10)
         self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
+        self.create_subscription(Pose, '/turtle2/pose', self.pose_callback, 10)
         self.create_subscription(Point, '/mouse_position', self.mouse_callback, 10)
         self.create_timer(0.01, self.timer_callback)
         self.spawn_pizza_client = self.create_client(GivePosition, '/spawn_pizza')
         self.eat_pizza_client = self.create_client(Empty, '/turtle1/eat')
+        self.eat_pizza_client = self.create_client(Empty, '/turtle2/eat')
 
         self.robot_pose = None
         # self.mouse_pose = None
