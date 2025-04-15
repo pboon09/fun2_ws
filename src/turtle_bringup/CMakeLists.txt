@@ -33,6 +33,7 @@ install(PROGRAMS
   scripts/crazy_turtle.py
   scripts/odom_publisher.py
   scripts/goto_pos.py
+  scripts/turtle_spawner.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
