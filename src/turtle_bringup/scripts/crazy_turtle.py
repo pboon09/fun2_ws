@@ -98,7 +98,7 @@ class CrazyTurtle(Node):
 
         self.cmdvel(vx, wz)
 
-        if distance < 0.5:
+        if distance < 0.7:
             self.eat_pizza()
             self.waypoints.pop(0)
             self.cmdvel(0.0, 0.0)

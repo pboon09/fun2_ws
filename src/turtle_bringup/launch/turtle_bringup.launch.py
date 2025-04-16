@@ -39,13 +39,15 @@ def generate_launch_description():
         package='turtle_bringup',
         executable='controller.py',
         name='controller',
+        namespace='turtle1',
         output='screen'
     )
     
     crazy_turtle_node = Node(
         package='turtle_bringup',
-        executable='crazy_turtle.py',
+        executable='controller.py',
         name='crazy_turtle',
+        namespace='turtle2',
         output='screen'
     )
     
@@ -66,13 +68,13 @@ def generate_launch_description():
     
     ld = LaunchDescription()
     
-    ld.add_action(micro_ros_agent)
+    # ld.add_action(micro_ros_agent)
     ld.add_action(turtlesim_plus_node)
-    ld.add_action(crazy_pizza_node)
-    ld.add_action(controller_node)
-    ld.add_action(crazy_turtle_node)
     ld.add_action(odom_publisher_node)
     ld.add_action(rviz_node)
-    ld.add_action(turtle_spawner_node)
+    ld.add_action(crazy_turtle_node)
+    ld.add_action(crazy_pizza_node)
+    ld.add_action(controller_node)
+    # ld.add_action(turtle_spawner_node)
 
     return ld
