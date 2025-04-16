@@ -114,7 +114,7 @@ class Controller(Node):
         correct_angle = m.atan2(m.sin(angle_diff), m.cos(angle_diff))
 
         K_linear = 5.0
-        K_angular = 15.0
+        K_angular = 20.0
 
         vx = K_linear * distance
         wz = K_angular * correct_angle
@@ -126,7 +126,7 @@ class Controller(Node):
 
         self.cmdvel(vx, wz)
 
-        if distance < 0.5:
+        if distance < 0.1:
             self.eat_pizza()
             self.waypoints.pop(0)
             self.cmdvel(0.0, 0.0)
