@@ -186,7 +186,7 @@ class TurtleEatInterface(PhysicsEntity,GraphicsEntity):
         PhysicsEntity.__init__(self,name=turtle.name)
         self.turtle = turtle
         #self.eat_range = Scanner(radius=2.0,range=math.pi/3,color=(0,255,0,127))
-        self.eat_range = Scanner(radius=0.5,range=math.pi/3,color=(0,255,0,127))
+        self.eat_range = Scanner(radius=0.2,range=math.pi/3,color=(0,255,0,127))
         self.eat_range.add_detection_type(Pizza)
         self.edibles = []
     def set_pose(self, pose: List[float]):

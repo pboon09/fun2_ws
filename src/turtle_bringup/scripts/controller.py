@@ -100,6 +100,9 @@ class Controller(Node):
         self.spawn_pizza(msg.x, msg.y)
     
     def timer_callback(self):
+        if self.robot_pose is None:
+            self.get_logger().debug('Waiting for pose information...')
+            return
         if not self.waypoints:
             self.cmdvel(0.0, 0.0)
             return
